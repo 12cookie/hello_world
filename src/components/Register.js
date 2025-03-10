@@ -20,7 +20,7 @@ function Register() {
   };
 
   return (
-    <div className = "container">
+    <div className = "register-container">
       <h2> Babysitter Registration </h2>
       <form onSubmit = {handleSubmit}>
 
