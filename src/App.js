@@ -1,39 +1,18 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Register from './components/Register';
 import './App.css';
 
-class App extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            items: [],
-            DataIsLoaded: false,
-        };
-    }
-
-    render() {
-        const handleClick = () => {
-            fetch("http://localhost:8080/hello?myName=Aashutosh")
-                .then((res) => res.json())
-                .then((json) => {
-                    this.setState({
-                        items: json,
-                        DataIsLoaded: true,
-                    });
-                });
-        };
-
-        return (
-            <div className = "App">
-                <div className = "Button">
-                    <button onClick={handleClick}>Click Me!</button>
-                    <p>
-                        {JSON.stringify(this.state.items)}
-                    </p>
-                </div>
-            </div>
-        );
-    }
+function App() {
+  return (
+    <Router>
+      <Routes>
+         <Route path="/" element = {<Home />} />
+         <Route path="/register" element = {<Register />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
