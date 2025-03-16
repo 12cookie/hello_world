@@ -4,7 +4,7 @@ import Loader from './Loader';
 import './../style/Register.css';
 
 function Register() {
-  
+
   const [form, setForm] = useState({
     id: '',
     name: '',
@@ -38,6 +38,7 @@ function Register() {
             "X-Request-ID": "26356718"
           }
         });
+      console.log("Registration response: ", response);
       setMessages(["Employee registered successfully!"]);
       setIsError(false);
       setForm({
